@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <br>
+    <h1>In Progress</h1>
+
+    {% if in_progress %}
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Filename</th>
+                    <th>Created</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in in_progress %}
+                    <tr onclick="window.location.href='file/{{ item.id }}';">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.filename }}</td>
+                        <td>{{ item.created.strftime('%Y-%m-%d %H:%M') }}</td>
+                        <td>{{ item.location }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+
+        <h3 style="text-align: center;">No files are currently in progress.</h3>
+
+    {% endif %}
+
+    <br>
+    <h1>Completed</h1>
+
+    {% if completed %}
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Filename</th>
+                    <th>Created</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in completed %}
+                    <tr onclick="window.location.href='file/{{ item.id }}';">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.filename }}</td>
+                        <td>{{ item.created.strftime('%Y-%m-%d %H:%M') }}</td>
+                        <td>{{ item.location }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+
+        <h3 style="text-align: center;">No completed files at the moment.</h3>
+
+    {% endif %}
+
+    <br>
+    <h1>Failed</h1>
+
+    {% if failed %}
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Filename</th>
+                    <th>Created</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in failed %}
+                    <tr onclick="window.location.href='file/{{ item.id }}';">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.filename }}</td>
+                        <td>{{ item.created.strftime('%Y-%m-%d %H:%M') }}</td>
+                        <td>{{ item.location }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+
+        <h3 style="text-align: center;">No files have failed processing.</h3>
+
+    {% endif %}
+
+{% endblock %}

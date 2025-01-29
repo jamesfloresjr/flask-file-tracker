@@ -1,0 +1,85 @@
+:root {
+	--color-1: #F5F7FA;
+	--color-2: #AA3A46;
+	--color-3: #A092A4;
+	--color-4: #95494F;
+	--color-5: #312F3A;
+}
+
+h1 {
+	font-weight: 600;
+	text-align: center;
+	color: var(--color-1);
+	padding: 10px 0px;
+}
+
+h3 {
+	font-weight: 600;
+	text-align: center;
+	color: var(--color-1);
+	padding: 10px 0px;
+}
+
+body {
+	font-family: Verdana, sans-serif;
+	background-color: var(--color-5);
+}
+
+.styled-table, .detailed-table {
+	border-collapse: collapse;
+	margin: 25px auto;
+	font-size: 1em;
+	min-width: 800px;
+	border-radius: 5px 5px 0 0;
+	overflow: hidden;
+	box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2), -1px -1px 8px rgba(0, 0, 0, 0.2);
+}
+
+.styled-table thead tr{
+	background-color: var(--color-2);
+	color: var(--color-1);
+	text-align: left;
+	font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td,
+.detailed-table th,
+.detailed-table td {
+	padding: 12px 15px;
+	text-align: left;
+}
+
+.detailed-table tbody tr td:first-child {
+	background-color: var(--color-2);
+	font-weight: bold;
+	color: var(--color-1)
+}
+
+.styled-table tbody tr {
+	border-bottom: 1px solid var(--color-4);
+	transition: all .2s ease-in;
+	cursor: pointer;
+	background-color: var(--color-1);
+}
+
+.detailed-table tbody tr {
+	border-bottom: 1px solid var(--color-2);
+	transition: all .2s ease-in;
+	cursor: pointer;
+	background-color: var(--color-1);
+}
+
+.styled-table tbody tr:last-of-type {
+	border-bottom: 2px solid var(--color-2);
+}
+
+.styled-table tbody tr:hover {
+	background-color: var(--color-3);
+}
+
+@media only screen and (max-width: 768px) {
+	table {
+		width: 90%;
+	}
+}
