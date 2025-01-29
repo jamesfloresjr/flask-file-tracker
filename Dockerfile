@@ -18,7 +18,6 @@ COPY monitor /deploy/monitor
 
 # Setup supervisord
 RUN mkdir -p /var/log/supervisor
-RUN mkdir -p /var/log/flask
 COPY supervisord.conf /etc/supervisord.conf
 
 # Start processes
