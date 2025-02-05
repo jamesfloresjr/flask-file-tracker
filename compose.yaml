@@ -1,1 +1,9 @@
-
+services:
+  web:
+    build: .
+    ports:
+      - "8080:5000"
+    volumes:
+      - "/test1:/mnt/"
+      - "/test2:/mnt/"
+    restart: unless-stopped
