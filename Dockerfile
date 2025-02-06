@@ -17,7 +17,7 @@ RUN mkdir -p /var/log/supervisor
 COPY supervisord.conf /etc/supervisord.conf
 
 # Expose port
-EXPOSE 5000
+#EXPOSE 5000
 
 # Start processes
 CMD ["/usr/local/bin/supervisord", "-c", "/etc/supervisord.conf"]
