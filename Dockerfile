@@ -1,7 +1,7 @@
 # flask file tracker
 
 FROM python:3-alpine
-LABEL maintainer="James Flores <james.flores@ngc.com>"
+LABEL maintainer="James Flores"
 
 # Setup flask application
 RUN mkdir -p /deploy/app
